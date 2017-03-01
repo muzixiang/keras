@@ -400,6 +400,7 @@ class Convolution2D(Layer):
         self.nb_row = nb_row
         self.nb_col = nb_col
         self.init = initializations.get(init)
+        
         self.activation = activations.get(activation)
         self.border_mode = border_mode
         self.subsample = tuple(subsample)
@@ -1168,7 +1169,7 @@ class Convolution3D(Layer):
         super(Convolution3D, self).__init__(**kwargs)
 
     def build(self, input_shape):
-        # assert len(input_shape) == 5 Delete for Timedistributed Usage!!
+        # assert len(input_shape) == 5 Delete this line for Timedistributed Convolution3D Usage!!
 
         if self.dim_ordering == 'th':
             stack_size = input_shape[1]
