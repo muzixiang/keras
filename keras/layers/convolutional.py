@@ -1168,7 +1168,7 @@ class Convolution3D(Layer):
         super(Convolution3D, self).__init__(**kwargs)
 
     def build(self, input_shape):
-        assert len(input_shape) == 5
+        # assert len(input_shape) == 5 Delete for Timedistributed Usage!!
 
         if self.dim_ordering == 'th':
             stack_size = input_shape[1]
